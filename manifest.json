@@ -1,0 +1,11 @@
+// https://www.freecodecamp.org/news/building-chrome-extension/
+{
+  "name": "Notify!",
+  "description": "A Google Chrome extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {},
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
