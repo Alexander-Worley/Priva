@@ -1,9 +1,9 @@
 # Terms_Summarized
-# Team:
-#   Alexander Worley
-#   Grace Zhou
-#   Rebecca Jia
-#   Yannie Tan
+## Team:
+###   Alexander Worley
+###   Grace Zhou
+###   Rebecca Jia
+###   Yannie Tan
 #
-#   Project Description:
+##   Project Description:
  
