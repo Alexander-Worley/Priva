@@ -26,6 +26,11 @@ body {
   overflow: scroll;
 }
 
+#disclaimer {
+  font-size: 10px;
+  color: #808080;
+}
+
 #logo {
   padding-top: 20px;
   display: block;
