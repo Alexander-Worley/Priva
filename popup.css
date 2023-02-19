@@ -42,11 +42,7 @@ body {
   padding: 10px;
 }
 
-h2 {
-  margin-top: 0;
-}
-
-#url {
+#question {
   font-style: italic;
 }
 

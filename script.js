@@ -1,14 +1,36 @@
-const urlElement = document.getElementById('url');
-const responseElement = document.getElementById('response');
-const printElement = document.getElementById('print');
+// In order to use this extension,
+// you must obtain an OpenAI GPT-3 APIKey.
+// You can obtain one here: https://platform.openai.com/account/api-keys
+// Once you obtain your APIKey, past it below:
+const apiKey = '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';
 
+// Store question for GPT-3 and GPT-3's response.
+const questionElement = document.getElementById('question');
+const responseElement = document.getElementById('response');
+
+function getWebsiteName(url) {
+  // Remove "www." and ".com"
+  let websiteName = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').replace(/\/.*$/, '');
+  // Remove subdomains
+  websiteName = websiteName.split('.').slice(-2, -1)[0];
+  // Convert to uppercase
+  websiteName = websiteName.charAt(0).toUpperCase() + websiteName.slice(1);
+  return websiteName;
+}
+
+// Prepare API input
 chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
-  const domain = new URL(tabs[0].url).hostname;
-  urlElement.innerText = `give me a bullet point list of the sensitive personal data is collected according to ${domain}?`;
-  const apiKey = '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';
-  const prompt = `What sensitive personal data is collected according to the cont https://www.tiktok.com/legal/page/us/privacy-policy/en#privacy-us`;
+  responseElement.innerText = "I'm sorry, but this webpage is not a valid WWW address. This extension can only handle internet-level webpages, not system-level ones.";
+  
+  const url = new URL(tabs[0].url).hostname;
+  const domain = getWebsiteName(url);
+
+  questionElement.innerText = `What data does ${domain} collect about its users, and how does it use it?`;
+  responseElement.innerText = "Loading...";
+
+  const prompt = `Short answer: What data does ${domain} collects about its users, and how it uses it?`;
   const temperature = 0.2;
-  const maxTokens = 1500;
+  const maxTokens = 150;
 
   const body = {
     prompt,
@@ -16,39 +38,28 @@ chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
     max_tokens: maxTokens,
   };
 
-  const response = await fetch("https://api.openai.com/v1/engines/davinci/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${apiKey}`
-    },
-    body: JSON.stringify(body)
-  });
+  // Call API
+  try {
+    const response = await fetch(`https://api.openai.com/v1/engines/davinci/completions?engine=davinci&prompt=${encodeURIComponent(prompt)}&temperature=${temperature}&max_tokens=${maxTokens}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify(body)
+    });
 
-  const data = await response.json();
-  const answer = data.choices && data.choices.length > 0 ? data.choices[0].text.trim() : null;
+    // Ensure response is valid
+    const data = await response.json();
+    const answer = data.choices && data.choices.length > 0 ? data.choices[0].text.trim()+"..." : null;
 
-  if (answer) {
-    responseElement.innerText = answer;
-  } else {
-    responseElement.innerText = "Error: No answer received from API.";
+    if (answer) {
+      responseElement.innerText = answer;
+    } else {
+      responseElement.innerText = "Error: No answer received from API.";
+    }
+
+  } catch (error) {
+    responseElement.innerText = `Error: ${error.message}`;
   }
-
-  console.log("Domain:", domain);
-  console.log("API Key:", apiKey);
-  console.log("Prompt:", prompt);
-  console.log("Temperature:", temperature);
-  console.log("Max Tokens:", maxTokens);
-  console.log("Response:", data);
-  console.log("Answer:", answer);
-
-  printElement.innerHTML = `
-    <p>Domain: ${domain}</p>
-    <p>API Key: ${apiKey}</p>
-    <p>Prompt: ${prompt}</p>
-    <p>Temperature: ${temperature}</p>
-    <p>Max Tokens: ${maxTokens}</p>
-    <p>Response: ${JSON.stringify(data)}</p>
-    <p>Answer: ${answer}</p>
-  `;
 });
