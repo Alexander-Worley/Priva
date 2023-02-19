@@ -1,6 +1,6 @@
 {
   "name": "Priva",
-  "description": "A Google Chrome extension!",
+  "description": "The TLDR for Privacy Policies",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
