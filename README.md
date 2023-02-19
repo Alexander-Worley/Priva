@@ -1,7 +1,7 @@
 # Priva
 ## Team:
 ###   Alexander Worley, Grace Zhou, Rebecca Jia, and Yannie Tan
-#
+###
 ##   Project Description:
 ## Welcome to Priva!
 ### Priva is your new TLDR for Reading Terms of Use / Privacy Policies!
@@ -14,4 +14,4 @@
 ### Once that is complete, simply load it into your Chrome browser, and you'll be good to go!
 ### Enjoy!
 ###
-### *Please note that this extension uses an AI. As such, it is prone to errors and misrepresentation. The information provided by this extension is not a substitute for reading an entity's Terms and Conditions and Privacy Policy yourself.*
+#### *Please note that this extension uses an AI. As such, it is prone to errors and misrepresentation. The information provided by this extension is not a substitute for reading an entity's Terms and Conditions and Privacy Policy yourself.*
