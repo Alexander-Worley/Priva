@@ -3,6 +3,7 @@ const responseElement = document.getElementById('response');
 const printElement = document.getElementById('print');
 const companyElement = document.getElementById('company');
 const collectionElement = document.getElementById('collection');
+const accessElement = document.getElementById('access');
 var pageContent;
 
 chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
@@ -13,9 +14,9 @@ chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
   const domain = new URL(tabs[0].url).hostname.replace(/.+\/\/|www.|\..+/g, '');
   companyElement.innerText = domain.charAt(0).toUpperCase() + domain.slice(1);;
   // urlElement.innerText = `What do you think of ${domain}?`;
-  const apiKey = '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';
+  const apiKey = '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';
   console.log("page content", pageContent)
-  const prompt = `State the sensitive personal data ${domain} collects in 200 words or less.`;
+  const prompt = `Summarize ${domain}'s privacy policy in 7 to 9 sentences`;
   const temperature = 0.5;
   const maxTokens = 200; 
 
@@ -74,6 +75,34 @@ chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
   } else {
     collectionElement.innerText = "Error: No answer received from API.";
   }
+
+  // Data collected
+  const prompt3 = `Summarize who can access the data that ${domain} collects`;
+  const body3 = {
+    prompt : prompt3,
+    temperature,
+    max_tokens: maxTokens,
+  };
+
+  const response3 = await fetch("https://api.openai.com/v1/engines/davinci/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`
+    },
+    body: JSON.stringify(body3)
+  });
+  const data3 = await response3.json();
+  const answer3 = data3.choices && data3.choices.length > 0 ? data2.choices[0].text.trim() : null;
+  
+  console.log("data", data2)
+  console.log("answer", answer2)
+  if (answer2) {
+    accessElement.innerText = answer3;
+  } else {
+    accessElement.innerText = "Error: No answer received from API.";
+  }
+
 
   console.log("Domain:", domain);
   console.log("API Key:", apiKey);
