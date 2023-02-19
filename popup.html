@@ -7,30 +7,32 @@
 </head>
 
 <body>
-  <!--Name and Logo-->
   <div id="main">
     <div class="logo-header">
       <img id="logo" src="shield.png" />
-      <div id="logoName">Priva</div>
+        Priva
     </div>
-    <!--Space between above and Question and Reponse Box-->
-    <p>
-      
-    </p>
-    <!--Question and Reponse box-->
+    <h4><span id="company"></span>'s privacy policy, summarized:</h4>
     <div class="summary-container">
-      <h4 id="question"></h4>
-      <div id="response"></div>
-      <h6>Read the full Privacy Policy and Terms and Conditions for more details.</h6>
+      <p id="response">
+      </p>
+      <div id="url"></div>
     </div>
-    <script src="script.js"></script>
-    <!--Warning-->
     <div>
-      <h4>Please note that this extension uses an AI.
-        As such, it is prone to errors and misrepresentation.
-        The information provided by this extension is not a substitute
-        for reading an entity's Terms and Conditions and Privacy Policy yourself.</h4>
+      <h4>What data is collected?</h4>
+      <div class="secondary-container">
+        <p id="collection"></p>
+      </div>
     </div>
+    <div>
+      <h4>Who can access my data?</h4>
+      <div class="secondary-container">
+        <p id="access"></p>
+      </div>
+    </div>
+    <p id="disclaimer">Disclaimer: Please read the entire terms and conditions / privacy policy document. This is just a
+      tool to get key information as you are reading. </p>
+    <script src="script.js"></script>
 </body>
 
 </html>
