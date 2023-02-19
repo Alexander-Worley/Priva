@@ -28,7 +28,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
   questionElement.innerText = `What data does ${domain} collect about its users, and how does it use it?`;
   responseElement.innerText = "Loading...";
 
-  const prompt = `What are the scariest parts of the way ${domain} collects data about its users, and how the company uses it?`;
+  const prompt = `Give me the gist of how ${domain} collects data about its users, and how the company uses it.`;
   const temperature = 0.5;
   const maxTokens = 150;
 
