@@ -2,7 +2,7 @@
 // you must obtain an OpenAI GPT-3 APIKey.
 // You can obtain one here: https://platform.openai.com/account/api-keys
 // Once you obtain your APIKey, past it between the '' below:
-const apiKey = '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';
+const apiKey = '';
 
 // Store question for GPT-3 and GPT-3's response.
 const questionElement = document.getElementById('question');
