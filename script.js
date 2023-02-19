@@ -8,7 +8,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
   const apiKey = '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';
   const prompt = `What sensitive personal data is collected according to the cont https://www.tiktok.com/legal/page/us/privacy-policy/en#privacy-us`;
   const temperature = 0.7;
-  const maxTokens = 150;
+  const maxTokens = 1500;
 
   const body = {
     prompt,

@@ -27,11 +27,14 @@ body {
 }
 
 #logo {
-  padding: 10px;
+  padding-top: 20px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #logoName {
+  padding-top: 10px;
   text-align: center;
 }
 #main {
