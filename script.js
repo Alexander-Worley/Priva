@@ -1,8 +1,8 @@
 // In order to use this extension,
 // you must obtain an OpenAI GPT-3 APIKey.
 // You can obtain one here: https://platform.openai.com/account/api-keys
-// Once you obtain your APIKey, past it below:
-const apiKey = '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';
+// Once you obtain your APIKey, past it between the '' below:
+const apiKey = '';
 
 // Store question for GPT-3 and GPT-3's response.
 const questionElement = document.getElementById('question');
