@@ -1,8 +1,11 @@
-function getText(){
-  return document.body.innerText
-}
-function getHTML(){
-  return document.body.outerHTML
-}
-console.log(getText());             //Gives you all the text on the page
-console.log(getHTML());
+chrome.runtime.onMessage.addListener(
+  function(message, sender, sendResponse) {
+      switch(message.type) {
+          case "getCount":
+              sendResponse(document.documentElement.innerText);
+              break;
+          default:
+              console.error("Unrecognised message: ", message);
+      }
+  }
+);

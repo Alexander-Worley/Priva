@@ -1,14 +1,22 @@
 const urlElement = document.getElementById('url');
 const responseElement = document.getElementById('response');
 const printElement = document.getElementById('print');
+const companyElement = document.getElementById('company');
+var pageContent;
 
 chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
-  const domain = new URL(tabs[0].url).hostname;
+  chrome.tabs.sendMessage(tabs[0].id, { type: "getCount" }, function (count) {
+  pageContent = count;
+  document.getElementById('summary').textContent = pageContent;
+});
+  const domain = new URL(tabs[0].url).hostname.replace(/.+\/\/|www.|\..+/g, '');
+  companyElement.innerText = domain.charAt(0).toUpperCase() + domain.slice(1);;
   urlElement.innerText = `What do you think of ${domain}?`;
-  const apiKey = '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';
-  const prompt = `What sensitive personal data is collected according to the cont https://www.tiktok.com/legal/page/us/privacy-policy/en#privacy-us`;
-  const temperature = 0.7;
-  const maxTokens = 150;
+  const apiKey = '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';
+  console.log("page content", pageContent)
+  const prompt = `Summarize the privacy policy of ${domain}`;
+  const temperature = 0.5;
+  const maxTokens = 150; 
 
   const body = {
     prompt,
@@ -33,7 +41,6 @@ chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
   } else {
     responseElement.innerText = "Error: No answer received from API.";
   }
-
   console.log("Domain:", domain);
   console.log("API Key:", apiKey);
   console.log("Prompt:", prompt);
