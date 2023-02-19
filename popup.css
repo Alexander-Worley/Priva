@@ -1,11 +1,28 @@
-.logo-header img {
-  width: 40px;
-  height: 40px;
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-.summary-container {
-  background-color: #F8EAFF;
-  border: 2px solid #951DCD;
-  padding: 16px;
-  border-radius: 16px;
+#main {
+  width: 300px;
+  padding: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+#url {
+  font-style: italic;
+}
+
+#error {
+  color: red;
+  font-weight: bold;
+}
+
+#response {
+  white-space: pre-wrap;
 }
