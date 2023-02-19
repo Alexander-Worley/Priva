@@ -1,0 +1,11 @@
+.logo-header img {
+  width: 40px;
+  height: 40px;
+}
+
+.summary-container {
+  background-color: #F8EAFF;
+  border: 2px solid #951DCD;
+  padding: 16px;
+  border-radius: 16px;
+}
