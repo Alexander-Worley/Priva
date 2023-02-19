@@ -3,13 +3,13 @@
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  margin: 0;
-  padding: 0;
+  margin: 10;
+  padding: 10;
 }
 
 .logo-header {
   font-family: "Comfortaa", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
 }
 
@@ -20,12 +20,20 @@ body {
 
 .summary-container {
   background-color: #F8EAFF;
-  padding: 16px;
-  border-radius: 16px;
-  max-height: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 280px;
   overflow: scroll;
 }
 
+#logo {
+  padding: 10px;
+  display: block;
+}
+
+#logoName {
+  text-align: center;
+}
 #main {
   width: 400px;
   padding: 10px;
