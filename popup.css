@@ -2,7 +2,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin: 10;
   padding: 10;
 }
@@ -11,19 +11,31 @@ body {
   font-family: "Comfortaa", sans-serif;
   font-weight: 400;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #951DCD;
 }
 
 .logo-header img {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  margin-bottom: 4px;
 }
 
 .summary-container {
-  background-color: #F8EAFF;
-  padding: 20px;
-  border-radius: 12px;
+  background-color: #fbf4ff;
+  padding: 16px;
+  border-radius: 8px;
   max-height: 280px;
   overflow: scroll;
+}
+
+.secondary-container {
+  border: 1px solid #fbf4ff;
+  border-radius: 8px;
+  padding: 16px;
 }
 
 #disclaimer {
@@ -31,17 +43,10 @@ body {
   color: #808080;
 }
 
-#logo {
-  padding-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #logoName {
-  padding-top: 10px;
   text-align: center;
 }
+
 #main {
   width: 400px;
   padding: 10px;
