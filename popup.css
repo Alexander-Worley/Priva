@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  margin: 0;
-  padding: 0;
+  margin: 10;
+  padding: 10;
 }
 
 .logo-header {
   font-family: "Comfortaa", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
 }
 
@@ -19,20 +19,24 @@ body {
 }
 
 .summary-container {
-  border: 1px solid #EDC6FF;
-  font-size: 14px;
-  padding: 0px 16px;
-  border-radius: 8px;
-  line-height: 22px;
-  max-height: 250px;
+  background-color: #F8EAFF;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 280px;
   overflow: scroll;
 }
 
-#disclaimer {
-  font-size: 10px;
-  color: #808080;
+#logo {
+  padding-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+#logoName {
+  padding-top: 10px;
+  text-align: center;
+}
 #main {
   width: 400px;
   padding: 10px;

@@ -4,7 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
-    "128": "shield128.png"
+    "128": "shield.png"
   },
   "action": {
     "default_popup": "popup.html"
