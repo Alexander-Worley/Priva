@@ -4,10 +4,10 @@ const printElement = document.getElementById('print');
 
 chrome.tabs.query({ active: true, currentWindow: true }, async function (tabs) {
   const domain = new URL(tabs[0].url).hostname;
-  urlElement.innerText = `What do you think of ${domain}?`;
+  urlElement.innerText = `give me a bullet point list of the sensitive personal data is collected according to ${domain}?`;
   const apiKey = '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';
   const prompt = `What sensitive personal data is collected according to the cont https://www.tiktok.com/legal/page/us/privacy-policy/en#privacy-us`;
-  const temperature = 0.7;
+  const temperature = 0.2;
   const maxTokens = 1500;
 
   const body = {
