@@ -1,12 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
+
 body {
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
 }
 
+.logo-header {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.logo-header img {
+  width: 40px;
+  height: 40px;
+}
+
+.summary-container {
+  background-color: #F8EAFF;
+  padding: 16px;
+  border-radius: 16px;
+  max-height: 250px;
+  overflow: scroll;
+}
+
 #main {
-  width: 300px;
+  width: 400px;
   padding: 10px;
 }
 
